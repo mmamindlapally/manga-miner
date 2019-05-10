@@ -7,8 +7,10 @@ import img2pdf
 from bs4 import BeautifulSoup
 
 URL = "http://www.mangareader.net"
-DDIR = "../Downloads/"
-
+DDIR = "Downloads/"
+if not os.path.exists(DDIR):
+    os.makedirs(DDIR)
+print("======================================================")
 # ask for the manga
 search_string = input("Enter your Manga: ")
 search_string.replace(" ", "+")

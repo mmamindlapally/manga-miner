@@ -15,5 +15,7 @@ go the home directory and enter
 ```
 Enter the required fields when prompted on the terminal. The mimanga tool accordingly decides the manga and downloads from [mangareader.net](https://www.mangareader.net)
 
+You will now find your manga in the Downloads directory. Happy Manging! :D
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
