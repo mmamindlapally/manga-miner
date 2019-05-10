@@ -2,10 +2,10 @@
 A Manga mining tool
 
 ## Setting up
-You should be having python3, virtualenv to use this application.
+You should be having python3, virtualenv and pip3 to use this application.
 If you are on ubuntu
 ```bash
-sudo apt install -r requirements.txt
+sudo apt install python3 virtualenv pip3
 ```
 
 ## Usage
