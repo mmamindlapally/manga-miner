@@ -12,7 +12,7 @@ if not os.path.exists(DDIR):
     os.makedirs(DDIR)
 print("======================================================")
 # ask for the manga
-search_string = input("Enter your Manga: ")
+search_string = input("Enter your Manga 👉 ")
 search_string.replace(" ", "+")
 
 # search for the manga
@@ -78,6 +78,11 @@ for chap in range(start_idx, end_idx+1):
 	imgurls = []
 	imglocs = []
 	pages = soup.find(id='pageMenu').find_all('option', value=True)
+
+	# update the user of download progress
+	sys.stdout.write('⬇ %s: Setting up ...\r' % (CHTITLE))
+	sys.stdout.flush()
+
 	for item in pages:
 		pageurls.append(item['value'])
 	for purl in pageurls:  
@@ -94,7 +99,7 @@ for chap in range(start_idx, end_idx+1):
 		path = os.path.join(tmpdir, fname)
 		try:
 			# update the user of download progress
-			sys.stdout.write('%s: Downloading Page: %s of %s\r' % (CHTITLE, str(pidx+1), str(len(imgurls))))
+			sys.stdout.write('⬇ %s: Downloading Page: %s of %s\r' % (CHTITLE, str(pidx+1), str(len(imgurls))))
 			sys.stdout.flush()
 
 			with open(path, "wb") as tmp:
@@ -109,7 +114,7 @@ for chap in range(start_idx, end_idx+1):
 	pdfname = os.path.expanduser(DDIR) + CHTITLE.replace(' ', '_') +".pdf"
 	with open(pdfname, "wb") as f:
 		f.write(img2pdf.convert([i for i in imglocs if i.endswith(".jpg")]))
-		sys.stdout.write("%s FINISHED :D                      \n" % (CHTITLE))
+		sys.stdout.write("%s DOWNLOADED ✔                    \n" % (CHTITLE))
 		sys.stdout.flush()
 
 	# remove the download directory
@@ -117,5 +122,5 @@ for chap in range(start_idx, end_idx+1):
 
 # :D :D :D 
 print("======================================================")
-print("                     THANK YOU                        ")
+print("                    😄THANK YOU😄                     ")
 print("======================================================")
