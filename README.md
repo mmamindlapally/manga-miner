@@ -1,5 +1,5 @@
-# MIMANGA
-A Manga mining tool
+# MANGA-MINER
+A terminal programme which searches for manga series and downloads your choice of chapters.
 
 ## Setting up
 You should be having python3, virtualenv and pip3 to use this application.
